@@ -1,6 +1,7 @@
 [![Docker Stars](https://img.shields.io/docker/stars/wilselby/car_demo.svg)](https://hub.docker.com/r/wilselby/car_demo/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wilselby/car_demo.svg)](https://hub.docker.com/r/wilselby/car_demo/)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/wilselby/car_demo/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/wilselby/car_demo.svg?branch=master)](https://travis-ci.org/wilselby/car_demo)
 
 # Demo of Prius in ROS/GAZEBO
 This project is a fork of the [OSRF Car Demo](https://github.com/osrf/car_demo) and also includes the SimCity model from [here](https://bitbucket.org/osrf/citysim/src/default/). 
