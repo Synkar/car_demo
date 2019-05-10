@@ -14,7 +14,7 @@ sudo apt-get -qq update
 
 echo "Installing additional ROS $ROS_DISTRO packages ..."
 
-sudo apt-get -qq install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-joy ros-$ROS_DISTRO-fake-localization ros-$ROS_DISTRO-robot-state-publisher > /dev/null
+sudo apt-get -qq install ros-$ROS_DISTRO-rviz ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-joy ros-$ROS_DISTRO-fake-localization ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-xacro > /dev/null
 
 source /opt/ros/$ROS_DISTRO/setup.bash
 
