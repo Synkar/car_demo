@@ -358,6 +358,76 @@
       </link>
       <pose frame=''>-5.93665 2.82417 0 0 -0 0</pose>
     </model>
+    <model name='person_standing'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 -0.1 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.8676 3.91524 0 0 -0 0</pose>
+    </model> 
     <model name='suv'>
       <static>1</static>
       <link name='link'>
@@ -423,16 +493,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='front_loader'>
-        <pose frame=''>-0.000168 -1e-06 1.75 2e-06 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='base_link'>
-          <pose frame=''>-0.000168 -1e-06 1.75 2e-06 -0 0</pose>
-          <velocity>-1e-06 -0.004866 -0.003363 0.002781 -0 0</velocity>
-          <acceleration>-0.000599 -2.23773 -6.7254 1.19988 -4.5e-05 -0.000528</acceleration>
-          <wrench>-0.898921 -3358.81 -10094.8 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -461,6 +521,16 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='person_standing'>
+        <pose frame=''>-3.86756 3.91524 0 1e-06 -1e-06 -0.000401</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.86756 3.91524 0 1e-06 -1e-06 -0.000401</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>2.19438 1.50545 1.4024 1.44023 0.913132 -2.90526</acceleration>
+          <wrench>175.55 120.436 112.192 0 -0 0</wrench>
         </link>
       </model>
       <model name='suv'>
