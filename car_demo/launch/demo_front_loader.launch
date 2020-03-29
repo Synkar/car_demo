@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default="$(find ouster_description)/worlds/example.world"/>
+  <arg name="model" default="$(find prius_description)/urdf/front_loader.urdf.xacro"/>
+  <arg name="rviz" default="true"/>
+  <arg name="rvizconfig" default="$(find car_demo)/rviz/front_loader_os1.rviz" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+    <arg name="world_name" value="$(find car_demo)/worlds/front_loader.world"/> 
+  </include>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+    <param name="publish_frequency" type="double" value="30.0" />
+    <!-- <remap from="robot_description" to="different_robot_description" /> -->
+    <!-- <remap from="joint_states" to="/prius/joint_states" /> -->
+  </node>
+
+  <!-- Spawn the example robot -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg model)'" />
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_vehicle" output="screen" args="-urdf -param robot_description -model front_loader"/>
+ 
+
+  <!-- RViz -->
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(arg rvizconfig)" />
+ 
+</launch>
+
