@@ -50,30 +50,6 @@
         <falloff>0</falloff>
       </spot>
     </light>
-    <model name='shaderbox'>
-      <pose>0 0 -5 0 -0 0</pose>
-      <static>1</static>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 0.1 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/citysim.material</uri>
-              <name>CitySim/ShinyGrey</name>
-            </script>
-          </material>
-          <plugin name='bloom' filename='libBloomVisualPlugin.so'/>
-          <plugin name='lensflare' filename='libLensFlareVisualPlugin.so'/>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <model name='city_terrain_1'>
       <static>1</static>
       <link name='link'>
